@@ -126,7 +126,7 @@ export default function MainSection() {
                 <p className=' font-normal text-xs text-mainSectonText'>Skill Test</p>
                 <Header setIsModalOpen={setIsModalOpen} />
                 <Statistics rank={rank} percentile={percentile} score={score} />
-                <Graph />
+                <Graph percentile={percentile}/>
 
             </div>
 

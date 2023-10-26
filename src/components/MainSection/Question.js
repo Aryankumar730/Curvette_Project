@@ -41,7 +41,7 @@ export default function Question({score}) {
 
             <div className=' text-sideBarText text-sm tracking-[-0.28px] mt-4'>
                 <div>
-                    <span className='font-bold leading-normal'>You scored 7 question correct out of 15.</span> However it
+                    <span className='font-bold leading-normal'>You scored {score} question correct out of 15.</span> However it
                 </div>
                 <p className=' font-normal leading-normal'>
                     still needs some improvements

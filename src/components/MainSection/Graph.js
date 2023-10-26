@@ -1,4 +1,4 @@
-import {React} from 'react'
+import { React } from 'react'
 import graph from '../../assets/graph.png';
 
 import {
@@ -24,9 +24,9 @@ ChartJS.register(
     Legend
 );
 
-export default function Graph() {
+export default function Graph({ percentile }) {
 
-    const dataValues = [12, 19, 3, 5, 2, 3]; // Sample data values
+    const dataValues = [2, 10, 7, 11, 19, 15]; // Sample data values
 
     const data = {
         labels: ['0%', '20%', '40%', '60%', '80%', '100%'],
@@ -51,7 +51,7 @@ export default function Graph() {
             legend: {
                 display: false,
             },
-           
+
         },
         scales: {
             x: {
@@ -69,7 +69,9 @@ export default function Graph() {
                 beginAtZero: true,
             },
         },
+       
     };
+
 
 
     return (
@@ -88,7 +90,7 @@ export default function Graph() {
 
             <div className=' text-sideBarText text-sm tracking-[-0.28px]'>
                 <div>
-                    <span className='font-bold leading-normal'>You scored 37% percentile</span> which is lower than the
+                    <span className='font-bold leading-normal'>You scored {percentile} percentile</span> which is lower than the
                 </div>
                 <p className=' font-normal leading-normal'>
                     average percentile 72% of all the engineers who took this assessment
