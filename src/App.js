@@ -1,24 +1,38 @@
-import logo from './logo.svg';
 import './App.css';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+
+import Sidebar from './components/Sidebar/Sidebar';
+import Navbar from './components/Navbar/Navbar';
+import MainSection from './components/MainSection/MainSection';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className='h-full'>
+        <div>
+          <Navbar />
+        </div>
+        <div className='flex flex-row h-full'>
+          <div className='min-h-full'>
+            <Sidebar />
+          </div>
+          <div className=''>
+            <Routes>
+              <Route path="/"
+                element={<><MainSection /></>} />
+              <Route path="/skillstest"
+                element={<><MainSection /></>} />
+            </Routes>
+          </div>
+        </div>
+      </div>
+    </BrowserRouter>
   );
 }
 
