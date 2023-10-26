@@ -132,7 +132,7 @@ export default function MainSection() {
 
             <div className=' flex flex-col p-8 gap-8 mt-12'>
                 <Syllabus />
-                <Question />
+                <Question score={score} />
 
             </div>
 

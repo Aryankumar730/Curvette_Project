@@ -3,14 +3,15 @@ import { Doughnut } from 'react-chartjs-2';
 import { Chart, ArcElement } from 'chart.js'
 import Accuracy from '../../assets/success.png'
 
-export default function Question() {
+export default function Question({score}) {
 
     Chart.register(ArcElement);
+    console.log("the value of score is", score);
     const data = {
         labels: ['Unscored', 'Scored',],
         datasets: [
             {
-                data: [15, 7],
+                data: [15, score],
                 backgroundColor: ['#438AF6', '#E5EDFF'],
                 borderWidth: 1,
 
@@ -34,7 +35,7 @@ export default function Question() {
             <div className='flex justify-between'>
                 <p className='text-mainSecHeaderCol text-base font-bold tracking-[-0.32px] '>Question Analysis</p>
 
-                <p className='text-base font-bold tracking-[-0.32px] text-[#438AF6]'>07 / 15</p>
+                <p className='text-base font-bold tracking-[-0.32px] text-[#438AF6]'>{score} / 15</p>
             </div>
 
 
